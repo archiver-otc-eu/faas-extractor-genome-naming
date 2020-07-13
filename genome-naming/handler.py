@@ -13,4 +13,4 @@ def handle(req: bytes):
     name_tokens = args["fileName"].split(".")[:-1]
     L = OLD if len(name_tokens) == 6 else NEW
 
-    return json.dumps({"xattrs": dict(zip(L, name_tokens))})
+    return json.dumps({"json": {"genome": dict(zip(L, name_tokens))}})
